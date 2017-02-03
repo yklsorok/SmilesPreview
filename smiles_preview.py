@@ -9,7 +9,7 @@ class SmilesPreview(sublime_plugin.EventListener):
         if (hover_zone == sublime.HOVER_TEXT):
             # locate smiles in the string. smiles string should be at the beginning and followed by tab (cxsmiles)
             hovered_line_text = view.substr(view.line(point)).strip()
-            smiles_regex = re.compile(r'^([^J][A-Za-z0-9@+\-\[\]\(\)\\\/%=#$]+)\t', re.IGNORECASE)
+            smiles_regex = re.compile(r'^([^J][A-Za-z0-9@+\-\[\]\(\)\\\/%=#$\.]+)\t', re.IGNORECASE)
             if (smiles_regex.match(hovered_line_text)):
                 smiles_string = smiles_regex.match(hovered_line_text).group(0)
                 file_name = "1.png"
